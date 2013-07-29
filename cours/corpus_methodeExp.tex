@@ -1,0 +1,133 @@
+\documentclass[12pt,aspectratio=43,dvipsnames,table]{beamer}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{euler}
+\usepackage{courier}
+\usepackage{tikz}
+
+\usetheme{default}
+\useinnertheme{default}
+\useoutertheme{default}
+\usefonttheme{serif}
+
+% Marges autour des slides
+\setbeamersize{text margin left=5mm, text margin right=5mm}
+
+% Suppression des symboles de navigation
+\setbeamertemplate{navigation symbols}{}
+
+% Définition du pied de page
+\setbeamertemplate{footline} {
+  \hfill{
+    \insertshortdate ~- %
+    page \insertframenumber~sur~\inserttotalframenumber %
+    %\hspace*{0.1cm}
+  } \vspace*{0.05cm}
+}
+
+% Définition des espacements des listes
+\setlength{\leftmargini}{0.6cm}
+\setlength{\leftmarginii}{0.4cm}
+\setlength{\leftmarginiii}{0.4cm}
+
+\title{Corpus et méthode expérimentale}
+\subtitle{module X9IT080}
+\author{Florian Boudin}
+\institute{Département informatique, Université de Nantes}
+\date[30 juillet 2013 / Rév.~1]{Révision~1 du 30 juillet 2012}
+
+\begin{document}
+
+%-B--------------------------------------------------------------------------B-%
+% frame titre
+\frame[plain]{\titlepage}
+%-E--------------------------------------------------------------------------E-%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}{Présentation du module}
+\begin{itemize} \itemsep10pt
+    \item Notions abordées dans ce module
+	\begin{itemize}
+		\item ...
+	\end{itemize}
+	\item Volume horaire~: 15 séances (20h)
+	\begin{itemize}
+		\item 6 CM (8h) - 6 TD (8h) - 3 TP (4h)
+	\end{itemize}
+	\item Notation
+\end{itemize}
+
+% \centering
+% \begin{tabular}{r|c|c|c}
+% 	\hline
+% 	~ & \textbf{Session~1} & \textbf{Session~2} & \textbf{Dispensé} \\
+% 	\hline
+% 	Examen CC & 0,3 & 0,2 & - \\
+% 	TP & 0,2 & 0,2 & 0,2 \\
+% 	Examen & 0,5 & 0,6 & 0,8 \\
+% 	\hline
+% \end{tabular}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+% Objectifs pédagogiques :
+% Les objectifs de cette UE sont doubles : 
+% 1. Aborder la notion de corpus, sa constitution, son analyse et les normes linguistiques d'annotation
+% 2. Mettre en place une méthode expérimentale, savoir analyser les résultats
+% Prérequis :
+% Introduction au traitement automatique de la langue naturelle (X7IT010)
+% Structure et modélisation en langue naturelle (X8IT010)
+% Programme - Contenu de l'UE :
+% Définition d'un corpus électronique, les différents types de corpus : monolingues, bilingues, etc.
+% Contraintes de constitution d'un corpus, les méthodes de moissonnage à partir du web, les encodages, les méta-données, la caractérisation des textes
+% Les normes de caractérisation et d'annotation : CES, TEI, DUBLIN CORE, LGRAF
+% Mise en place d'une démarche expérimentale : paramètres d'évaluation (quantité de données, découpage entraînement/dev/test, etc.), analyse des résultats, tests de significativité, tests de correlation
+% Compétences acquises :
+% Cette UE apporte un ensemble de connaissances sur la notion de corpus, qui représente le matériau de base de nombreuses applications de TALN, et sur la mise en place d'une démarche expérimentale rigoureuse.
+
+
+% %-B------------------------------PLAN----------------------------------------B-%
+% \begin{frame}
+% \frametitle{Plan}
+% \tableofcontents[sectionstyle=show,subsectionstyle=hide,subsubsectionstyle=hide]
+% \end{frame}
+% %-E--------------------------------------------------------------------------E-%
+
+%==============================================================================%
+\section{Corpus}
+%==============================================================================%
+
+%-B------------------------------PLAN----------------------------------------B-%
+\begin{frame}
+\frametitle{Plan}
+\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+%-B--------------------------------------------------------------------------B-%
+\input{sections/corpus.tex}
+%-E--------------------------------------------------------------------------E-%
+
+
+
+
+%==============================================================================%
+\section{Références}
+%==============================================================================%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}[allowframebreaks]
+    \fontsize{9pt}{10}\selectfont
+    \frametitle{References}
+    \bibliographystyle{alpha}
+    \bibliography{bibliography}
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+\end{document}
