@@ -31,8 +31,8 @@ Le corpus doit évidemment atteindre une taille critique pour permettre des
 traitements statistiques fiables.
 
     \begin{itemize}
-        \item Si le corpus est utilisé pour construire des modèles de langue, quelle 
-              doit être sa taille minimum~? 1M mots, 10M mots, etc.
+        \item Si un corpus est utilisé pour construire des modèles de langue, 
+              quelle doit être sa taille minimum~? 1M mots, 10M mots, etc.
     \end{itemize}
 
 \end{block}
@@ -67,6 +67,19 @@ ces deux registres.
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Les différents types de corpora}
+\tableofcontents[sectionstyle=show/hide,subsectionstyle=show]
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+%==============================================================================%
+\subsection{Corpus parallèle}
+%==============================================================================%
+
 
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}
@@ -188,15 +201,188 @@ My name is Paul .
 \begin{frame}
 \frametitle{Corpora parallèles disponibles}
 
-\begin{itemize}
-    \item Europarl \\
-    Délibérations du Parlement européen disponibles en 21 langues.
-    \item OpenSubtitles\\
-    Sous-titres de films disponibles en 30 langues.
-    \item Hansard (Canada)\\
-    Rranscriptions officielles des débats parlementaires dans les gouvernements.
+\begin{itemize}\itemsep10pt
+    \item Europarl~\cite{koehn2005europarl}
+    \begin{itemize}
+        \item Délibérations du Parlement européen disponibles en 21 langues et 
+              alignées au niveau de la phrase.
+    \end{itemize}
+    \item OPUS~\cite{tiedemann2009news}
+    \begin{itemize}
+        \item Collection de corpora parallèles issus de sources variées~:
+              EMEA (European Medicines Agency documents), KDE4 (KDE4 
+              localization files), Europarl, OpenSubtitles, etc.
+        \item \url{http://opus.lingfil.uu.se/}
+    \end{itemize}
+    \item Les livres numériques librement disponibles.
+    \begin{itemize}
+        \item \url{http://www.gutenberg.org/}
+    \end{itemize}
+    \item Wikipédia~: \alert{\fbox{plus comparable que parallèle}}
 \end{itemize}
 
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+%==============================================================================%
+\subsection{Corpus comparable}
+%==============================================================================%
+
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}[allowframebreaks]
+\frametitle{Corpus comparable}
+
+\begin{itemize}\itemsep10pt
+    \item Les corpora parallèles sont très couteux à produire et ils ne sont
+          disponibles que dans un nombre de langues/domaines réduit.
+    \item Les corpus dits \textbf{comparables} sont largement plus répandus.
+    \item D'après Déjean \& Gaussier~\cite{dejean2002nouvelle}~:
+    \begin{itemize}
+        \item Deux corpus de deux langues $l_1$ et $l_2$ sont dits comparables 
+              s'il existe une sous-partie non négligeable du vocabulaire du 
+              corpus de langue $l_1$, respectivement $l_2$, dont la traduction 
+              se trouve dans le corpus de langue $l_2$, respectivement $l_1$.
+    \end{itemize}
+
+    \framebreak
+
+    \item Exemple~: un ensemble d'articles de journaux dans différentes langues,
+          traitant d'une même actualité et à la même époque.
+    \item Applications~:
+    \begin{itemize}
+        \item Extraction de phrases parallèles~\cite{smith2010extracting}
+        \item Constitution de dictionnaires bilingues~\cite{rapp1999automatic}
+    \end{itemize}
+    \item Peu (ou pas~?) de corpora comparables disponibles.
+    \begin{itemize}
+        \item Wikipedia
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+%==============================================================================%
+\subsection{La constitution de corpus}
+%==============================================================================%
+
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{La constitution de corpus}
+
+\begin{enumerate}\itemsep10pt
+
+    \item Définir les caractéristiques du corpus~:
+    \begin{itemize}
+        \item Quels sont les phénomènes que l'on souhaite observer~?
+        \item Quelle est la tâche que l'on souhaite réaliser~?
+        \item Le corpus doit-il pouvoir être distribué~?
+    \end{itemize} 
+
+    \item Assembler les unités textuelles (documents, phrases, etc.)
+    \begin{itemize}
+        \item Est-ce que le processus peut être automatisé~?
+        \begin{itemize}
+            \item e.g.~moissonnage à partir du web (\textit{web scraping}).
+        \end{itemize}
+        \item Une sélection manuelle est-elle nécessaire (et possible)~?
+        \item[$\to$] Garder en mémoire la méthodologie utilisée (e.g.~README).
+    \end{itemize}
+
+    \item[Opt.] Annotation du corpus
+    \begin{itemize}
+        \item Annoter les unités textuelles (e.g.~\textit{Part-Of-Speech}).
+        \item Créer un référenciel pour l'évaluation (e.g.~termes-clés).
+        \item[$\to$] Définir des \textit{guidelines} à joindre au corpus.
+    \end{itemize}
+
+\end{enumerate}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Exemple 1}
+\framesubtitle{Corpus pour évaluer un système d'extraction de termes-clés}
+
+\begin{itemize} \itemsep10pt
+    \item Caractéristiques du corpus
+    \begin{itemize}
+        \item On souhaite évaluer un système d'extraction de termes-clés et 
+              pouvoir distribuer le corpus pour des raisons de comparaison.
+        \item[$\to$] Choix de la nature des documents~: \alert{articles}, blogs,
+                     tweets, etc.
+        \item[$\to$] Langue(s) des documents~: anglais, \alert{français}, etc.
+        \item[$\to$] Source(s) des documents~: lemonde.fr, \alert{wikinews}, 
+                     etc.
+        \item[$\to$] Nombre de documents~: 10, 20, 50, \alert{100}, 1000, etc.
+    \end{itemize}
+
+    \item Récupération des documents
+    \begin{itemize}
+        \item Automatiser le processus à partir d'un \textit{dump} de wikinews
+        \item[$\to$] Filtrage (manuel) des documents trop courts
+        \item Définir un format pour les documents (XML, HTML, txt, etc.)
+    \end{itemize}
+
+    \item Création d'un référentiel pour l'évaluation
+    \begin{itemize}
+        % \item Recruter des annotateurs pour extraire les termes-clés
+        \item Tâche subjective $\to$ plusieurs annotations par documents
+    \end{itemize}
+
+\end{itemize}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Exemple 2}
+\framesubtitle{Corpus de phrases analysées en dépendances}
+
+\begin{itemize} \itemsep10pt
+    \item Caractéristiques du corpus
+    \begin{itemize}
+        \item On souhaite créer un corpus composé de phrases analysées en 
+              dépendances afin d'étudier des phénomènes linguistiques
+              et d'entraîner un outil d'analyse en dépendances.
+        \item[$\to$] Choix de la nature des phrases~: \underline{\qquad}
+        \item[$\to$] Langue(s) des phrases~: \underline{\qquad}
+        \item[$\to$] Source(s) des phrases~: \underline{\qquad}
+        \item[$\to$] Nombre de phrases~: \underline{\qquad}
+    \end{itemize}
+    \item Récupération des phrases
+    \begin{itemize}
+        \item[$\to$] Récupération automatisée ou manuelle~?
+    \end{itemize}
+    \item Annotation des phrases
+    \begin{itemize}
+        \item Recruter des spécialistes~? définir des \textit{guidelines}~? 
+    \end{itemize}
+
+\end{itemize}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+%==============================================================================%
+\subsection{L'annotation de corpus}
+%==============================================================================%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{L'annotation de corpus}
+
+\begin{itemize}
+    \item Différents niveaux d'annotation
+\end{itemize}
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
@@ -205,8 +391,17 @@ My name is Paul .
 
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}
-\frametitle{}
+\frametitle{Un point sur l'encodage}
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
+
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Un point sur les méta-données}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
 

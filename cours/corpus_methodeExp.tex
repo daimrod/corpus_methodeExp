@@ -1,17 +1,16 @@
 \documentclass[12pt,aspectratio=43,dvipsnames,table]{beamer}
-\usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
 \usepackage{url}
-\usepackage{multirow}
-\usepackage{euler}
-\usepackage{courier}
 \usepackage{tikz}
 
 \usetheme{default}
 \useinnertheme{default}
 \useoutertheme{default}
 \usefonttheme{serif}
+
+\usecolortheme[named=RoyalPurple]{structure}
 
 % Marges autour des slides
 \setbeamersize{text margin left=5mm, text margin right=5mm}
@@ -39,6 +38,15 @@
 \institute{Département informatique, Université de Nantes}
 \date[30 juillet 2013 / Rév.~1]{Révision~1 du 30 juillet 2012}
 
+% Pour ajouter le plan au début de chaque section
+\AtBeginSection[]
+{
+\begin{frame}
+\frametitle{Plan}
+\tableofcontents[sectionstyle=show/shaded,subsectionstyle=hide,subsubsectionstyle=hide]
+\end{frame}
+}
+
 \begin{document}
 
 %-B--------------------------------------------------------------------------B-%
@@ -60,17 +68,6 @@
 	\item Notation
 \end{itemize}
 
-% \centering
-% \begin{tabular}{r|c|c|c}
-% 	\hline
-% 	~ & \textbf{Session~1} & \textbf{Session~2} & \textbf{Dispensé} \\
-% 	\hline
-% 	Examen CC & 0,3 & 0,2 & - \\
-% 	TP & 0,2 & 0,2 & 0,2 \\
-% 	Examen & 0,5 & 0,6 & 0,8 \\
-% 	\hline
-% \end{tabular}
-
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
 
@@ -91,29 +88,37 @@
 % Cette UE apporte un ensemble de connaissances sur la notion de corpus, qui représente le matériau de base de nombreuses applications de TALN, et sur la mise en place d'une démarche expérimentale rigoureuse.
 
 
-% %-B------------------------------PLAN----------------------------------------B-%
-% \begin{frame}
-% \frametitle{Plan}
-% \tableofcontents[sectionstyle=show,subsectionstyle=hide,subsubsectionstyle=hide]
-% \end{frame}
-% %-E--------------------------------------------------------------------------E-%
-
 %==============================================================================%
-\section{Corpus}
+\section{La notion de corpus}
 %==============================================================================%
-
-%-B------------------------------PLAN----------------------------------------B-%
-\begin{frame}
-\frametitle{Plan}
-\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide]
-\end{frame}
-%-E--------------------------------------------------------------------------E-%
 
 %-B--------------------------------------------------------------------------B-%
 \input{sections/corpus.tex}
 %-E--------------------------------------------------------------------------E-%
 
 
+%==============================================================================%
+\section{Les normes de caractérisation et d'annotation}
+%==============================================================================%
+
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Les normes de caractérisation et d'annotation}
+\begin{itemize}
+    \item Partie de Béatrice
+\end{itemize}
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+%==============================================================================%
+\section{Démarche expérimentale}
+%==============================================================================%
+
+%-B--------------------------------------------------------------------------B-%
+\input{sections/demarcheExp.tex}
+%-E--------------------------------------------------------------------------E-%
 
 
 %==============================================================================%
