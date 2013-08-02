@@ -377,21 +377,99 @@ My name is Paul .
 %==============================================================================%
 
 %-B--------------------------------------------------------------------------B-%
-\begin{frame}
+\begin{frame}[allowframebreaks]
 \frametitle{L'annotation de corpus}
 
-\begin{itemize}
-    \item Différents niveaux d'annotation
+\begin{itemize}\itemsep10pt
+
+    \item Différents niveaux d'annotation~:
+    \begin{itemize}
+        \item collection de documents, e.g.~regroupement par sujets
+        \item document, e.g.~jugement de pertinence en RI
+        \item paragraphe, e.g.~découpage thématique
+        \item phrases, e.g.~segmentation en phrases
+        \item multi-mots, e.g.~détection d'entités nommées
+        \item mots, e.g.~tokenization
+        \item caractères, e.g.~analyse morphologique
+    \end{itemize}
+
+    \item Critères de sélection des annotateurs
+    \begin{itemize}
+        \item Spécialistes du domaine, e.g.~médecin pour de la RI médicale
+        \item Natif de la langue, e.g.~évaluation de la grammaticalité
+        \item Extérieur au projet, e.g.~annotation par les auteurs...
+        \item Attention au \alert{\textit{crowdsourcing}} !
+    \end{itemize}
+
+    \framebreak
+
+    \item L'annotation d'un point de vue technique
+    \begin{itemize}
+        \item Séparation entre les unités et les annotations
+        \item Format (e.g.~XML) et encodage standard (e.g.~UTF-8)
+    \end{itemize}
+
+    \item Variabilité des annotations (\textit{consistency})
+    \begin{itemize}
+        \item Plusieurs annotateurs $\to$ annotations différentes
+        \begin{itemize}
+            \item Résoudre les désaccords par consensus~?
+            \item Considérer plusieurs annotations comme vraies~?
+        \end{itemize}
+    \end{itemize}
+
 \end{itemize}
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
 
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Exemple d'annotation de corpus}
+\framesubtitle{Détection de sentiment dans les tweets}
+
+\begin{itemize}
+    \item Détecter la \textbf{polarité} d'un tweet
+    \begin{itemize}
+        \item Annoter un sentiment négatif, neutre ou positif
+    \end{itemize}
+\end{itemize}
+
+\begin{enumerate} \itemsep5pt
+    \item @pcinpact \only<2>{\alert{$\to$ négatif}} \\
+          Décès de Whitney Houston : la vilaine bourde de Sony Music
+
+    \item @PoufyGB \only<2>{\alert{$\to$ neutre}} \\
+          Interview des \#DaftPunk sur France Inter 1 mois après la sortie 
+          de l'album
+
+    \item @Zzzzzzzz \only<2>{\alert{$\to$ ?}} \\
+          Seuls 126\% des marseillais exagèrent.
+\end{enumerate}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
 
 
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}
 \frametitle{Un point sur l'encodage}
+
+\begin{itemize} \itemsep10pt
+    \item La lecture/écriture de fichiers contenant du texte suppose 
+         l'utilisation d'un encodage des caractères.
+    \begin{itemize}
+        \item Anglais~: \sout<2>{ASCII}
+        \item Français~: \sout<2>{ISO-8859-1}
+        \item Japonais~: \sout<2>{ISO-2022-JP}
+        \item etc.
+    \end{itemize}
+
+    \huge
+
+    \item<2>[] \alert{$\to$ \textbf{UTF-8}}
+
+\end{itemize}
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%

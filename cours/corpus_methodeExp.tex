@@ -47,6 +47,10 @@
 \end{frame}
 }
 
+% Pour pouvoir barrer du texte avec des pauses
+\usepackage{ulem} % pour le texte barré sout{}
+\renewcommand<>{\sout}[1]{\only#2{\beameroriginal{\sout}{#1}}\invisible#2{#1}}
+
 \begin{document}
 
 %-B--------------------------------------------------------------------------B-%
