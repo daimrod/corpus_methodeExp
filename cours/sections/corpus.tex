@@ -2,78 +2,63 @@
 \begin{frame}[allowframebreaks]
 \frametitle{Définitions}
 
-\begin{block}{Corpus}
 
-Un \textbf{corpus} est un ensemble de documents (textes, images, vidéos, etc.) 
-regroupés dans une optique précise.\\[0.5em]
-
-Dans le cadre de ce cours~: \alert{\fbox{corpus $\to$ corpus de textes}}\\[0.5em]
-
-Plusieurs caractéristiques sont à prendre en compte pour la création d'un corpus
-bien formé~:
-
-	\begin{itemize}
-		\item la taille;
-		\item le langage;
-		\item le temps couvert par les textes du corpus;
-		\item le registre de langage.
-	\end{itemize}
-
-\end{block}
-
-Source~: \url{http://fr.wikipedia.org/wiki/Corpus}
-
-\framebreak
-
-\begin{block}{Taille}
-
-Le corpus doit évidemment atteindre une taille critique pour permettre des 
-traitements statistiques fiables.
-
+\begin{itemize} \itemsep0.8em
+    \item un \textbf{corpus} est un ensemble de documents (textes, images, 
+          vidéos) regroupés dans une optique précise
+    \item dans le cadre de ce cours~: \alert{\fbox{corpus $\to$ textes}}
+    \item caractéristiques d'un corpus:
     \begin{itemize}
-        \item Si un corpus est utilisé pour construire des modèles de langue, 
-              quelle doit être sa taille minimum~? 1M mots, 10M mots, etc.
+        \item la taille
+        \item le langage
+        \item le temps couvert par les textes du corpus
+        \item le registre de langage
     \end{itemize}
-
-\end{block}
-
-\begin{block}{Langage}
-
-Un corpus \textbf{monolingue} bien formé doit nécessairement couvrir une seule 
-langue, et une seule déclinaison de cette langue (e.g.~français de France et 
-français du Québec).
-
-\end{block}
+\end{itemize}
 
 \framebreak
 
-\begin{block}{Période couverte}
 
-Le temps joue un rôle important dans l'évolution du langage~: le français parlé 
-aujourd'hui ne ressemble pas au français parlé il y a 200 ans ni, de façon plus 
-subtile, au français parlé il y a 10 ans, à cause notamment des néologismes.
+\begin{itemize} \itemsep0.8em
+    \item le corpus doit atteindre une \textbf{taille} critique pour permettre 
+          des traitements statistiques fiables
+    \begin{itemize}
+        \item 10K+ phrases pour entraîner un \textit{POS-tagger}
+        \item 20M+ mots pour construire un modèle de langue
+    \end{itemize}
+    \item un corpus \textbf{monolingue} couvre une seule langue, et une seule 
+          déclinaison de cette langue
+    \begin{itemize}
+        \item e.g.~français de France et français du Québec
+    \end{itemize}
+\end{itemize}
 
-\end{block}
+\framebreak
 
-
-\begin{block}{Registre de langage}
-
-Un corpus construit à partir de textes scientifiques ne peut être utilisé pour 
-extraire des informations sur les textes vulgarisés, et un corpus mélangeant des
-textes scientifiques et vulgarisés ne permettra pas de tirer de conclusion sur 
-ces deux registres.
-
-\end{block}
+\begin{itemize} \itemsep0.8em
+    \item la \textbf{période couverte} par les textes doit être courte
+    \begin{itemize}
+        \item français d'aujourd'hui $\ne$ français parlé au 19$^e$ siècle
+        \item français d'aujourd'hui $\ne$ français de 1990 (néologismes)
+    \end{itemize}
+    \item les \textbf{registres de langage} doivent être séparés
+    \begin{itemize}
+        \item un corpus de textes scientifiques ne peut être utilisé pour 
+              extraire des informations sur les textes vulgarisés
+        \item un corpus de textes scientifiques et vulgarisés ne permettra pas 
+              de tirer de conclusion sur ces deux registres
+    \end{itemize}
+\end{itemize}
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
 
-%-B--------------------------------------------------------------------------B-%
-\begin{frame}
-\frametitle{Les différents types de corpora}
-\tableofcontents[sectionstyle=show/hide,subsectionstyle=show]
-\end{frame}
-%-E--------------------------------------------------------------------------E-%
+% %-B--------------------------------------------------------------------------B-%
+% \begin{frame}
+% \frametitle{Les différents types de corpora}
+% \tableofcontents[sectionstyle=show/hide,subsectionstyle=show]
+% \end{frame}
+% %-E--------------------------------------------------------------------------E-%
 
 
 %==============================================================================%
@@ -85,37 +70,34 @@ ces deux registres.
 \begin{frame}
 \frametitle{Corpus parallèle}
 
-Un corpus parallèle est un ensemble de paires de textes tel que, pour une 
-paire, un des textes est la traduction de l'autre. \\[0.5em]
-
-Construire un corpus parallèle nécessite un \textbf{alignement} des unités 
-textuelles~:
-
+\begin{itemize} \itemsep0.8em
+    \item un \textbf{corpus parallèle} est un ensemble de paires de textes tel 
+          que, pour une paire, un des textes est la traduction de l'autre
+    \item un \textbf{alignement} des unités textuelles est nécessaire:
     \begin{itemize}
         \item mettre en correspondance des unités textuelles en langue source
-              avec celles de la langue cible.
+              avec celles de la langue cible
     \end{itemize}
-
-L'alignement des unités textuelles peut être manuel ou automatique.\\[0.5em]
-
-La granularité de l'alignement (documents, phrases, mots) dépend de 
-l'utilisation du corpus~:
-
+    \item un alignement peut être manuel ou automatique
+    \item la granularité de l'alignement dépend de l'utilisation
     \begin{itemize}
-        \item traduction automatique, génération de paraphrases, construction
-              dictionnaires bilingues, etc.
+        \item traduction automatique, dictionnaires bilingues, etc.
     \end{itemize}
+\end{itemize}
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
 
 %-B--------------------------------------------------------------------------B-%
-\begin{frame}
+\begin{frame}[shrink=5]
 \frametitle{Alignement de phrases}
 
-\begin{columns}[c] 
-    \small
+\vspace*{1em}
 
+\small
+
+\begin{columns}[c] 
+    
     \column{.45\textwidth}
 
     Il s'agit de l'un des sauropodes les plus connus. \\[0.5em]
@@ -152,19 +134,15 @@ l'utilisation du corpus~:
 
 \end{columns}
 
-\vspace*{1em}
-
-Source~: \url{http://en.wikipedia.org/wiki/Diplodocus}
-
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
 
 
 %-B--------------------------------------------------------------------------B-%
-\begin{frame}
+\begin{frame}[shrink=5]
 \frametitle{Alignement de mots}
 
-Exemple d'alignment simple.
+\vspace*{1em}
 
 \begin{center}
 Je suis Français . \\
@@ -177,9 +155,7 @@ Je suis Français . \\
 I am French .
 \end{center}
 
-\vspace*{1em}
-
-Exemple d'alignment plus compliqué.
+\vspace*{0.5em}
 
 \begin{center}
 Je m' appelle Paul . \\
@@ -201,20 +177,19 @@ My name is Paul .
 \begin{frame}
 \frametitle{Corpora parallèles disponibles}
 
-\begin{itemize}\itemsep10pt
+\begin{itemize} \itemsep0.8em
     \item Europarl~\cite{koehn2005europarl}
     \begin{itemize}
-        \item Délibérations du Parlement européen disponibles en 21 langues et 
+        \item délibérations du Parlement européen disponibles en 21 langues et 
               alignées au niveau de la phrase.
     \end{itemize}
     \item OPUS~\cite{tiedemann2009news}
     \begin{itemize}
-        \item Collection de corpora parallèles issus de sources variées~:
-              EMEA (European Medicines Agency documents), KDE4 (KDE4 
-              localization files), Europarl, OpenSubtitles, etc.
+        \item \textit{European Medicines Agency documents}, 
+              \textit{KDE4 localization files}, Europarl, OpenSubtitles, etc.
         \item \url{http://opus.lingfil.uu.se/}
     \end{itemize}
-    \item Les livres numériques librement disponibles.
+    \item livres numériques librement disponibles
     \begin{itemize}
         \item \url{http://www.gutenberg.org/}
     \end{itemize}
@@ -234,30 +209,34 @@ My name is Paul .
 \begin{frame}[allowframebreaks]
 \frametitle{Corpus comparable}
 
-\begin{itemize}\itemsep10pt
-    \item Les corpora parallèles sont très couteux à produire et ils ne sont
-          disponibles que dans un nombre de langues/domaines réduit.
-    \item Les corpus dits \textbf{comparables} sont largement plus répandus.
-    \item D'après Déjean \& Gaussier~\cite{dejean2002nouvelle}~:
+\begin{itemize} \itemsep0.8em
+    \item les corpora parallèles sont très couteux et ils ne sont
+          disponibles que dans peu de langues/domaines
+    \item les corpus dits \textbf{comparables} sont plus répandus
+    \item d'après Déjean \& Gaussier~\cite{dejean2002nouvelle}~:
     \begin{itemize}
-        \item Deux corpus de deux langues $l_1$ et $l_2$ sont dits comparables 
-              s'il existe une sous-partie non négligeable du vocabulaire du 
-              corpus de langue $l_1$, respectivement $l_2$, dont la traduction 
-              se trouve dans le corpus de langue $l_2$, respectivement $l_1$.
+        \item \og{}Deux corpus de deux langues $l_1$ et $l_2$ sont dits 
+              comparables s'il existe une sous-partie non négligeable du 
+              vocabulaire du corpus de langue $l_1$, respectivement $l_2$, dont
+              la traduction se trouve dans le corpus de langue $l_2$, 
+              respectivement $l_1$.\fg{}
     \end{itemize}
 
     \framebreak
 
-    \item Exemple~: un ensemble d'articles de journaux dans différentes langues,
-          traitant d'une même actualité et à la même époque.
-    \item Applications~:
+    \item exemple de corpus comparable:
     \begin{itemize}
-        \item Extraction de phrases parallèles~\cite{smith2010extracting}
-        \item Constitution de dictionnaires bilingues~\cite{rapp1999automatic}
+        \item un ensemble d'articles de journaux dans différentes langues,
+              traitant d'une même actualité et à la même époque
     \end{itemize}
-    \item Peu (ou pas~?) de corpora comparables disponibles.
+    \item applications
     \begin{itemize}
-        \item Wikipedia
+        \item extraction de phrases parallèles~\cite{smith2010extracting}
+        \item constitution de dictionnaires bilingues~\cite{rapp1999automatic}
+    \end{itemize}
+    \item peu (ou pas~?) de corpora comparables disponibles
+    \begin{itemize}
+        \item Wikipédia, le web multilingue, etc.
     \end{itemize}
 \end{itemize}
 
@@ -274,30 +253,29 @@ My name is Paul .
 \begin{frame}
 \frametitle{La constitution de corpus}
 
-\begin{enumerate}\itemsep10pt
+\begin{enumerate} \itemsep0.8em
 
-    \item Définir les caractéristiques du corpus~:
+    \item définir les caractéristiques du corpus~:
     \begin{itemize}
-        \item Quels sont les phénomènes que l'on souhaite observer~?
-        \item Quelle est la tâche que l'on souhaite réaliser~?
-        \item Le corpus doit-il pouvoir être distribué~?
+        \item quels sont les phénomènes que l'on souhaite observer~?
+        \item quelle est la tâche que l'on souhaite réaliser~?
+        \item le corpus doit-il pouvoir être distribué~?
     \end{itemize} 
 
-    \item Assembler les unités textuelles (documents, phrases, etc.)
+    \item assembler les unités textuelles
     \begin{itemize}
-        \item Est-ce que le processus peut être automatisé~?
+        \item est-ce que le processus peut être automatisé~?
         \begin{itemize}
-            \item e.g.~moissonnage à partir du web (\textit{web scraping}).
+            \item e.g.~moissonnage à partir du web (\textit{web scraping})
         \end{itemize}
-        \item Une sélection manuelle est-elle nécessaire (et possible)~?
-        \item[$\to$] Garder en mémoire la méthodologie utilisée (e.g.~README).
+        \item[$\to$] garder en mémoire la méthodologie utilisée
     \end{itemize}
 
-    \item[Opt.] Annotation du corpus
+    \item annotation du corpus (optionnel)
     \begin{itemize}
-        \item Annoter les unités textuelles (e.g.~\textit{Part-Of-Speech}).
-        \item Créer un référenciel pour l'évaluation (e.g.~termes-clés).
-        \item[$\to$] Définir des \textit{guidelines} à joindre au corpus.
+        \item annoter les unités textuelles (e.g.~\textit{Part-Of-Speech})
+        \item créer un référenciel pour l'évaluation (e.g.~termes-clés)
+        \item[$\to$] définir des \textit{guidelines} à joindre au corpus
     \end{itemize}
 
 \end{enumerate}
@@ -307,33 +285,28 @@ My name is Paul .
 
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}
-\frametitle{Exemple 1}
-\framesubtitle{Corpus pour évaluer un système d'extraction de termes-clés}
+\frametitle{Étude de cas~: extraction de termes clés}
 
-\begin{itemize} \itemsep10pt
-    \item Caractéristiques du corpus
+\begin{itemize} \itemsep0.8em
+    \item un corpus pour entraîner et évaluer un système d'extraction de 
+          termes-clés
     \begin{itemize}
-        \item On souhaite évaluer un système d'extraction de termes-clés et 
-              pouvoir distribuer le corpus pour des raisons de comparaison.
-        \item[$\to$] Choix de la nature des documents~: \alert{articles}, blogs,
-                     tweets, etc.
-        \item[$\to$] Langue(s) des documents~: anglais, \alert{français}, etc.
-        \item[$\to$] Source(s) des documents~: lemonde.fr, \alert{wikinews}, 
+        \item[$\to$] nature des documents~: \alert{articles}, blogs, tweets, etc.
+        \item[$\to$] langue(s) des documents~: anglais, \alert{français}, etc.
+        \item[$\to$] source(s) des documents~: lemonde.fr, \alert{wikinews}, 
                      etc.
-        \item[$\to$] Nombre de documents~: 10, 20, 50, \alert{100}, 1000, etc.
+        \item[$\to$] nombre de documents~: 10, 20, 50, \alert{100}, 1000, etc.
     \end{itemize}
 
-    \item Récupération des documents
+    \item récupération des documents
     \begin{itemize}
-        \item Automatiser le processus à partir d'un \textit{dump} de wikinews
-        \item[$\to$] Filtrage (manuel) des documents trop courts
-        \item Définir un format pour les documents (XML, HTML, txt, etc.)
+        \item automatiser le processus à partir d'un \textit{dump} de wikinews
+        \item définir un format pour les documents (XML, txt, etc.)
     \end{itemize}
 
-    \item Création d'un référentiel pour l'évaluation
+    \item création d'un référentiel pour l'évaluation
     \begin{itemize}
-        % \item Recruter des annotateurs pour extraire les termes-clés
-        \item Tâche subjective $\to$ plusieurs annotations par documents
+        \item tâche subjective $\to$ plusieurs annotations par document
     \end{itemize}
 
 \end{itemize}
@@ -343,27 +316,23 @@ My name is Paul .
 
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}
-\frametitle{Exemple 2}
-\framesubtitle{Corpus de phrases analysées en dépendances}
+\frametitle{Étude de cas~: analyse en dépendances}
 
-\begin{itemize} \itemsep10pt
-    \item Caractéristiques du corpus
+\begin{itemize} \itemsep0.8em
+    \item un corpus de phrases annotées en dépendances entraîner un 
+          \textit{parser}
     \begin{itemize}
-        \item On souhaite créer un corpus composé de phrases analysées en 
-              dépendances afin d'étudier des phénomènes linguistiques
-              et d'entraîner un outil d'analyse en dépendances.
-        \item[$\to$] Choix de la nature des phrases~: \underline{\qquad}
-        \item[$\to$] Langue(s) des phrases~: \underline{\qquad}
-        \item[$\to$] Source(s) des phrases~: \underline{\qquad}
-        \item[$\to$] Nombre de phrases~: \underline{\qquad}
+        \item[$\to$] langue(s) des phrases~: \underline{\qquad}
+        \item[$\to$] source(s) des phrases~: \underline{\qquad}
+        \item[$\to$] nombre de phrases~: \underline{\qquad}
     \end{itemize}
-    \item Récupération des phrases
+    \item récupération des phrases
     \begin{itemize}
-        \item[$\to$] Récupération automatisée ou manuelle~?
+        \item[$\to$] automatisée ou manuelle~?
     \end{itemize}
-    \item Annotation des phrases
+    \item annotation des phrases
     \begin{itemize}
-        \item Recruter des spécialistes~? définir des \textit{guidelines}~? 
+        \item recruter des spécialistes~? définir des \textit{guidelines}~? 
     \end{itemize}
 
 \end{itemize}
@@ -380,9 +349,9 @@ My name is Paul .
 \begin{frame}[allowframebreaks]
 \frametitle{L'annotation de corpus}
 
-\begin{itemize}\itemsep10pt
+\begin{itemize} \itemsep0.8em
 
-    \item Différents niveaux d'annotation~:
+    \item différents niveaux d'annotation~:
     \begin{itemize}
         \item collection de documents, e.g.~regroupement par sujets
         \item document, e.g.~jugement de pertinence en RI
@@ -393,29 +362,26 @@ My name is Paul .
         \item caractères, e.g.~analyse morphologique
     \end{itemize}
 
-    \item Critères de sélection des annotateurs
+    \item l'annotation d'un point de vue technique
     \begin{itemize}
-        \item Spécialistes du domaine, e.g.~médecin pour de la RI médicale
-        \item Natif de la langue, e.g.~évaluation de la grammaticalité
-        \item Extérieur au projet, e.g.~annotation par les auteurs...
-        \item Attention au \alert{\textit{crowdsourcing}} !
+        \item séparation des annotations du texte
+        \item format (e.g.~XML) et encodage standard
     \end{itemize}
 
-    \framebreak
+     \framebreak
 
-    \item L'annotation d'un point de vue technique
+    \item critères de sélection des annotateurs
     \begin{itemize}
-        \item Séparation entre les unités et les annotations
-        \item Format (e.g.~XML) et encodage standard (e.g.~UTF-8)
+        \item spécialistes, e.g.~médecin pour de la RI médicale
+        \item natif de la langue, e.g.~évaluation de la grammaticalité
+        \item extérieur au projet, e.g.~annotation par les auteurs...
+        \item attention au \alert{\textit{crowdsourcing}} !
     \end{itemize}
 
-    \item Variabilité des annotations (\textit{consistency})
+    \item variabilité des annotations (\textit{consistency})
     \begin{itemize}
-        \item Plusieurs annotateurs $\to$ annotations différentes
-        \begin{itemize}
-            \item Résoudre les désaccords par consensus~?
-            \item Considérer plusieurs annotations comme vraies~?
-        \end{itemize}
+        \item résoudre les désaccords par consensus~? 
+        \item considérer plusieurs annotations~?
     \end{itemize}
 
 \end{itemize}
@@ -425,26 +391,25 @@ My name is Paul .
 
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}
-\frametitle{Exemple d'annotation de corpus}
-\framesubtitle{Détection de sentiment dans les tweets}
+\frametitle{Étude de cas~: annotation de tweets}
 
 \begin{itemize}
-    \item Détecter la \textbf{polarité} d'un tweet
+    \item détecter la \textbf{polarité} d'un tweet
     \begin{itemize}
-        \item Annoter un sentiment négatif, neutre ou positif
+        \item annoter un sentiment négatif, neutre ou positif
     \end{itemize}
 \end{itemize}
 
 \begin{enumerate} \itemsep5pt
-    \item @pcinpact \only<2>{\alert{$\to$ négatif}} \\
-          Décès de Whitney Houston : la vilaine bourde de Sony Music
+    \item \og{}Décès de Whitney Houston: la vilaine bourde de Sony Music\fg{}
+          \only<2>{\alert{$\to$ négatif}}
+        
+    \item \og{}Interview des \#DaftPunk sur France Inter 1 mois après la sortie 
+          de l'album\fg{}
+          \only<2>{\alert{$\to$ neutre}}
 
-    \item @PoufyGB \only<2>{\alert{$\to$ neutre}} \\
-          Interview des \#DaftPunk sur France Inter 1 mois après la sortie 
-          de l'album
-
-    \item @Zzzzzzzz \only<2>{\alert{$\to$ ?}} \\
-          Seuls 126\% des marseillais exagèrent.
+    \item \og{}Seuls 126\% des marseillais exagèrent.\fg{}
+          \only<2>{\alert{$\to$ ?}}
 \end{enumerate}
 
 \end{frame}
@@ -455,17 +420,17 @@ My name is Paul .
 \begin{frame}
 \frametitle{Un point sur l'encodage}
 
-\begin{itemize} \itemsep10pt
-    \item La lecture/écriture de fichiers contenant du texte suppose 
-         l'utilisation d'un encodage des caractères.
+\begin{itemize} \itemsep0.8em
+    \item la lecture/écriture de fichiers textes suppose l'utilisation d'un 
+          encodage des caractères
     \begin{itemize}
-        \item Anglais~: \sout<2>{ASCII}
-        \item Français~: \sout<2>{ISO-8859-1}
-        \item Japonais~: \sout<2>{ISO-2022-JP}
+        \item anglais~: \sout<2>{ASCII}
+        \item français~: \sout<2>{ISO-8859-1}
+        \item japonais~: \sout<2>{ISO-2022-JP}
         \item etc.
     \end{itemize}
 
-    \huge
+    \Large
 
     \item<2>[] \alert{$\to$ \textbf{UTF-8}}
 
@@ -478,6 +443,23 @@ My name is Paul .
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}
 \frametitle{Un point sur les méta-données}
+
+\begin{itemize} \itemsep0.8em
+    \item une \textbf{méta-donnée} est une donnée servant à définir ou décrire 
+          une autre donnée
+    \begin{itemize}
+        \item e.g.~associer à une donnée la date de création, à une photo les 
+              coordonnées GPS du lieu où elle a été prise
+    \end{itemize}
+    \item le \textit{Dublin Core} est la principale initiative visant à la 
+          convergence des éléments de méta-données à utiliser
+    \item 15 éléments de description~:
+    \begin{itemize}
+        \item formels (titre, créateur, éditeur)
+        \item intellectuels (sujet, description, langue, etc.)
+        \item relatifs à la propriété intellectuelle (droits)
+    \end{itemize}
+\end{itemize}
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
