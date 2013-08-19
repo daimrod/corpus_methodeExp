@@ -1,7 +1,7 @@
 % Mise en place d'une démarche expérimentale : paramètres d'évaluation (quantité de données, découpage entraînement/dev/test, etc.), analyse des résultats, tests de significativité, tests de correlation
 
 %-B--------------------------------------------------------------------------B-%
-\begin{frame}
+\begin{frame}[allowframebreaks]
 \frametitle{Introduction}
 
 \begin{itemize} \itemsep0.8em
@@ -11,12 +11,173 @@
     \begin{itemize}
         \item e.g.~expérience du cerf-volant de Benjamin Franklin
     \end{itemize}
+
+    \item exemple
+    \begin{itemize}
+        \item hypothèse $\to$ segmenter le chinois avec les CRF
+        \item expérience $\to$ évaluer la précision sur un corpus
+    \end{itemize}    
+
     \item \textbf{évaluer} un système de TAL consiste à vérifier qu'il produit 
           le résultat pour lequel il a été conçu
 
-    \item le TAL regroupe 
+    \framebreak
+
+    \item le TAL englobe un grand nombre de tâches, chacune ayant des critères 
+          particuliers quant à son évaluation
+
+    \item cette partie est basée sur~\cite{resnik2010}
+    \begin{itemize}
+        \item \url{http://www.umiacs.umd.edu/~jbg/teaching/CMSC_773_2012/reading/evaluation.pdf}
+    \end{itemize}
 \end{itemize}
 
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}[allowframebreaks]
+\frametitle{Exemple}
+
+\begin{itemize} \itemsep0.8em
+    \item un exemple pour introduire les idées que nous allons voir en détails 
+          par la suite
+
+    \item évaluer un moteur de recherche sémantique
+    \begin{itemize}
+        \item requêtes analysées et converties en sujet-relation-objet
+    \end{itemize}
+
+    \item \textit{when was the light bulb patented by Edison~?}
+    \begin{itemize}
+        \item[$\to$] $[$Edison, patented, bulb$]$
+        \item permet de retrouver le document \og{}\textit{Thomas Edison's 
+              patent of the electric light bulb}\fg{}
+    \end{itemize}
+
+    \framebreak
+
+    \item comment évaluer le composant d'analyse en sujet-relation-objet~?
+
+    \item[$\to$] conduire une évaluation \textbf{intrinsèque}
+    \begin{itemize}
+        \item créer un ensemble de questions analysées manuellement
+        \item évaluer la performance avec des mesures de P-R-F
+         \item comparer deux versions (\textit{formative evaluation})
+        \item comparer à d'autres méthodes (\textit{summative evaluation})
+    \end{itemize}
+
+    \framebreak
+
+    \item est-ce qu'une analyse précise permet d'améliorer les résultats du 
+          moteur de recherche~?
+
+    \item[$\to$] conduire une évaluation \textbf{extrinsèque}
+    \begin{itemize}
+        \item évaluer l'impact de l'analyse sur la performance du moteur
+        \item utiliser une collection de test avec des mesures de P-R-F
+    \end{itemize}
+
+    \item[$\to$] conduire évaluation \textit{in situ}
+    \begin{itemize}
+        \item proposer le système aux utilisateurs et les observer
+    \end{itemize}
+
+\end{itemize}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}[allowframebreaks]
+\frametitle{Concepts fondamentaux}
+
+\begin{itemize} \itemsep0.8em
+    \item \textbf{évaluation manuelle}
+    \begin{itemize}
+        \item demander à des sujets humains d'évaluer un système selon des 
+              critères pré-définis $\to$ souvent la meilleure évaluation~!
+        \item nombreuses limitations~: coût important, évaluation lente, 
+              résultats inconsistants et non reproductibles
+    \end{itemize}
+
+    \item \textbf{évaluation automatique}
+    \begin{itemize}
+        \item création d'un \textit{gold standard}, \textit{ground truth}, etc.
+        \item nécessite une mesure qui \og{}simule\fg{} une évaluation manuelle
+        \item correlation entre les évaluations manuelles et automatiques
+    \end{itemize}
+
+    \framebreak
+
+    \item \textbf{évaluation intrisèque}
+    \begin{itemize}
+        \item la sortie du système est évaluée directement par rapport à des 
+              critères pré-définis
+    \end{itemize}
+
+    \item \textbf{évaluation extrisèque}
+    \begin{itemize}
+        \item la sortie du système est évaluée à travers son impact sur une 
+              tâche externe
+    \end{itemize}
+
+    \item exemple du résumé automatique
+    \begin{itemize}
+        \item évaluation intrisèque $\to$ ROUGE ou évaluation manuelle
+        \item évaluation extrisèque $\to$ les résumés sont-ils utiles pour 
+              remplacer les snippets d'un moteur de RI~?
+    \end{itemize}
+
+    \framebreak
+
+    \item \textbf{accord inter-annotateurs}
+    \begin{itemize}
+        \item en TAL, l'évaluation se résume à annoter du texte
+        \item comparer la performance de plusieurs annotateurs
+        \item un accord inter-annotateurs faible
+        \begin{itemize}
+            \item[$\to$] tâche trop difficile ou mal définie
+        \end{itemize}
+        \item le taux d'accord inter-annotateurs constitue la limite haute 
+              (\textbf{upper bound}) de ce qu'il est possible d'évaluer
+    \end{itemize}
+
+    \item de nombreuses mesures d'évaluation
+    \begin{itemize}
+        \item coefficient kappa de Cohen
+        \item voir~\cite{artstein2008inter} pour plus de détails
+    \end{itemize}
+
+\end{itemize}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Le découpage des données}
+
+\begin{itemize} \itemsep0.8em
+    \item la plupart des évaluations impliquent un découpage des données en 
+          ensembles \textbf{disjoints}
+    \begin{itemize}
+        \item \textbf{training data} (70\%)
+        \item \textbf{development data} (20\%)
+        \item \textbf{test data} (10\%)
+    \end{itemize}
+
+    \item \textbf{évaluation croisée}
+    \begin{itemize}
+        \item permet d'évaluer sur toutes les données disponibles
+        \item découper l'ensemble de données en $k$ partitions
+        \begin{itemize}
+            \item entraîner sur $k-1$ partitions et tester sur la partition restante
+            \item calculer la performance moyenne sur les $k$ partitions
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
 
 
 \end{frame}
@@ -25,8 +186,88 @@
 
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}
-\frametitle{Introduction}
+\frametitle{Présenter des résultats}
+
+\begin{itemize} \itemsep0.8em
+    \item mesures/métriques pour estimer la performance
+    \item toujours inclure au moins une \textit{baseline}
+\end{itemize}
+
+\vspace*{1em}
+
+\small
+\begin{tabular}{ l c c c }
+\hline
+    \textbf{Système} &
+    \textbf{Mesure 1} & 
+    \textbf{Mesure 2} & 
+    \textbf{Mesure combinée} \\
+\hline
+    Baseline 1 & $M_1^{B1}$ & $M_2^{B1}$ & $M_c^{B1}$ \\
+    Baseline 2 & $M_1^{B2}$ & $M_2^{B2}$ & $M_c^{B2}$ \\
+    Variation 1 & $M_1^{V1}$ & $M_2^{V1}$ & $M_c^{V1}$ \\
+    Variation 2 & $M_1^{V2}$ & $M_2^{V2}$ & $M_c^{V2}$ \\
+    Upper bound & $M_1^U$ & $M_2^U$ & $M_c^U$ \\
+\hline
+\end{tabular}
 
 
 \end{frame}
 %-E--------------------------------------------------------------------------E-%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Test de significativité}
+
+\begin{itemize} \itemsep0.8em
+    \item considérons les performances (\textsc{Rouge-2}) de deux systèmes de résumé 
+          automatique
+    \begin{itemize}
+        \item système 1~: 40\% vs. système 2~: 43\%
+    \end{itemize}
+\end{itemize}
+
+\pause
+
+\begin{center}
+
+\begin{tabular}{ l | c c c c c || c }
+\hline
+~ & A & B & C & D & E & Avg. \\
+\hline
+    \textbf{système 1} & 
+        \textcolor{ForestGreen}{\fbox{41}} & 
+        \textcolor{ForestGreen}{\fbox{34}} & 
+        \textcolor{ForestGreen}{\fbox{31}} & 
+        35 & 
+        \textcolor{ForestGreen}{\fbox{59}} & 40 \\
+    \textbf{système 2} & 
+        38 & 
+        29 & 
+        27 & 
+        \textcolor{ForestGreen}{\fbox{65}} & 
+        56 & 
+        \textcolor{ForestGreen}{\fbox{43}} \\
+\hline
+\end{tabular}
+
+\end{center}
+
+\begin{itemize}
+    \item toujours effectuer un test de significativté
+    \begin{itemize}
+        \item e.g.~ t.test de Student
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+%-E--------------------------------------------------------------------------E-%
+
+
+% %-B--------------------------------------------------------------------------B-%
+% \begin{frame}
+% \frametitle{Introduction}
+
+
+% \end{frame}
+% %-E--------------------------------------------------------------------------E-%

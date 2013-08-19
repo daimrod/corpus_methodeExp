@@ -4,6 +4,7 @@
 \usepackage[francais]{babel}
 \usepackage{url}
 \usepackage{tikz}
+\usepackage{colortbl}
 
 \usetheme{default}
 \useinnertheme{default}
@@ -38,7 +39,7 @@
 \subtitle{module X9IT080}
 \author{Florian Boudin}
 \institute{Département informatique, Université de Nantes}
-\date[30 juillet 2013 / Rév.~1]{Révision~1 du 30 juillet 2012}
+\date[19 août 2013 / Rév.~1]{Révision~1 du 19 août 2013}
 
 % Pour ajouter le plan au début de chaque section
 \AtBeginSection[]
@@ -62,16 +63,20 @@
 
 %-B--------------------------------------------------------------------------B-%
 \begin{frame}{Présentation du module}
-\begin{itemize} \itemsep10pt
-    \item Notions abordées dans ce module
+\begin{itemize} \itemsep0.8em
+    \item notions abordées dans ce module
 	\begin{itemize}
-		\item ...
+		\item corpus~: constitution, analyse et normes d'annotation
+        \item démarche scientifique~: évaluation, correlation, significativité
 	\end{itemize}
-	\item Volume horaire~: 15 séances (20h)
+	\item volume horaire~: 15 séances (20h)
 	\begin{itemize}
 		\item 6 CM (8h) - 6 TD (8h) - 3 TP (4h)
 	\end{itemize}
-	\item Notation
+    \item notation
+    \begin{itemize}
+        \item projet de création de corpus
+    \end{itemize}
 \end{itemize}
 
 \end{frame}
@@ -124,6 +129,46 @@
 
 %-B--------------------------------------------------------------------------B-%
 \input{sections/demarcheExp.tex}
+%-E--------------------------------------------------------------------------E-%
+
+%==============================================================================%
+\section{Lectures}
+%==============================================================================%
+
+%-B--------------------------------------------------------------------------B-%
+\begin{frame}
+\frametitle{Lectures}
+
+\begin{itemize} \itemsep0.8em
+
+    \item corpus parallèle
+    \begin{itemize}
+        \setlength{\itemindent}{2.5em}
+        \item[\cite{tiedemann2011bitext}] Tiedemann, Bitext alignment
+    \end{itemize}
+
+    \item corpus comparable
+    \begin{itemize}
+        \setlength{\itemindent}{2.5em}
+        \item[\cite{rapp1999automatic}] Rapp, Automatic identification of word 
+              translations from unrelated english and german corpora
+    \end{itemize}
+
+    \item évaluation en TAL
+    \begin{itemize}
+        \setlength{\itemindent}{2.5em}
+        \item[\cite{resnik2010}] Resnik \& Lin, Evaluation of nlp systems
+    \end{itemize}
+
+    \item accord inter-annotateurs
+    \begin{itemize}
+        \setlength{\itemindent}{2.5em}
+        \item[\cite{artstein2008inter}] Artstein \& Poesio, Inter-coder agreement
+              for computational linguistics
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
 %-E--------------------------------------------------------------------------E-%
 
 
