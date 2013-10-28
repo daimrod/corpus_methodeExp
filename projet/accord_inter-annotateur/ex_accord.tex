@@ -1,0 +1,51 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+
+% \setlength{\parskip}{0.8em}
+
+\begin{document}
+
+\title{Notation des présentations et accord inter-annotateur}
+\author{Florian Boudin}
+\date{Corpus et méthode expérimentale - 2013}
+
+\maketitle
+
+\section*{Notation des présentations}
+
+Vous allez présenter, par groupe de deux étudiants, quatre articles de recherche.
+Cette présentation est notée et compte pour 25\% de la note de ce module.
+Vous serez évalués sur cinq critères~:
+
+\begin{enumerate}
+    \item[C1] Qualité des transparents (1-5)
+    \item[C2] Qualité du discours et répartition entre les deux étudiants (1-5)
+    \item[C3] Compréhension et vulgarisation du contenu scientifique (1-5)
+    \item[C4] Réponse aux questions (1-5)
+    \item[C5] Respect du temps (1-5)
+    \item[C6] Qualité générale de la présentation (1-5)
+\end{enumerate}
+
+En plus des notes que je vais vous donner, vous effecturez également une évaluation de chaque présentation.
+L'intérêt de cette évaluation multiple est double~: 1.~vous faire participer à la notation, et 2.~recueillir des évaluations pour calculer des mesures d'accord inter-annotateur.
+Un formulaire de notation vous sera remis en début de séance.
+
+\section*{Calcul de l'accord inter-annotateur}
+
+Vos évaluations ont été collectées, \textbf{anonymisées} et regroupées dans des fichiers (un pour chaque présentation) au format suivant~:
+
+\begin{verbatim}
+id_annotateur \t C1 \t C2 \t C3 \t C4 \t C5 \t C6
+\end{verbatim}
+
+Votre tâche consiste à calculer l'accord inter-annotateur (\textit{Fleiss kappa}) pour chaque critère, une description de cette mesure est disponible sur wikipédia\footnote{\url{http://en.wikipedia.org/wiki/Fleiss_kappa}}.
+
+
+
+
+
+\end{document}  
