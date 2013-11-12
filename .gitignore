@@ -46,3 +46,7 @@ projet/accord_inter-annotateur/formulaire.fdb_latexmk
 projet/accord_inter-annotateur/formulaire.log
 
 projet/accord_inter-annotateur/formulaire.synctex.gz
+
+in_progress/data.csv
+
+in_progress/data.ods

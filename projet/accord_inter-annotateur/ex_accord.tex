@@ -36,13 +36,25 @@ Un formulaire de notation vous sera remis en début de séance.
 
 \section*{Calcul de l'accord inter-annotateur}
 
-Vos évaluations ont été collectées, \textbf{anonymisées} et regroupées dans des fichiers (un pour chaque présentation) au format suivant~:
+Vos évaluations ont été collectées, \textbf{anonymisées} et regroupées dans un fichier au format suivant~:
 
 \begin{verbatim}
 id_annotateur \t C1 \t C2 \t C3 \t C4 \t C5 \t C6
 \end{verbatim}
 
-Votre tâche consiste à calculer l'accord inter-annotateur (\textit{Fleiss kappa}) pour chaque critère, une description de cette mesure est disponible sur wikipédia\footnote{\url{http://en.wikipedia.org/wiki/Fleiss_kappa}}.
+Dans un premier temps, calculez des indices statistiques permettant de répondre aux questions suivantes~:
+
+\begin{enumerate}
+    \item Quelle présentation a obtenu les meilleures notes~?
+    \item Quel est l'annotateur le plus strict/le plus généreux~?
+    \item Les différences de notes entre les présentations sont-elles significatives~?
+    \item Quel est le critère d'annotation le plus subjectif~?
+\end{enumerate}
+
+
+Votre tâche consiste ensuite à calculer l'accord inter-annotateur (\textit{Fleiss kappa}) pour chaque critère, une description de cette mesure est disponible sur wikipédia\footnote{\url{http://en.wikipedia.org/wiki/Fleiss_kappa}}.
+
+
 
 
 
